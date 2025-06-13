@@ -7,13 +7,13 @@ This project sets up a basic Apache Airflow environment with Docker Compose.
 1. Initialize Airflow metadata DB:
 
     ```bash
-    docker-compose run airflow-webserver airflow db init
+    docker compose run airflow-webserver airflow db init
     ```
 
 2. Create the admin user:
 
     ```bash
-    docker-compose run airflow-webserver airflow users create \
+    docker compose run airflow-webserver airflow users create \
         --username admin --password admin \
         --firstname Admin --lastname User \
         --role Admin --email admin@example.com
@@ -22,7 +22,7 @@ This project sets up a basic Apache Airflow environment with Docker Compose.
 4. Start the environment:
 
     ```bash
-    docker-compose up
+    docker compose up
     ```
 
 5. Visit the web UI:  
