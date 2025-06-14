@@ -1,4 +1,4 @@
-version: '3.7'
+# version: '3.7'
 
 services:
   postgres:
@@ -16,10 +16,12 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
       AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: 'True'
+      AIRFLOW__WEBSERVER__SECRET_KEY: 0tCb6J8gMzpg2TNwzEg-tLc00Rd3-XRjBxsn6bb-Vzo
     depends_on:
       - postgres
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./data_volume:/opt/airflow/data
     ports:
       - "8080:8080"
     command: webserver
@@ -31,8 +33,10 @@ services:
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__WEBSERVER__SECRET_KEY: 0tCb6J8gMzpg2TNwzEg-tLc00Rd3-XRjBxsn6bb-Vzo
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./data_volume:/opt/airflow/data
     command: scheduler
 
 volumes:

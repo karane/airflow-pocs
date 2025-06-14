@@ -18,10 +18,10 @@ This project sets up a basic Apache Airflow environment with Docker Compose.
         --firstname Admin --lastname User \
         --role Admin --email admin@example.com
     ```
-
 4. Start the environment:
 
     ```bash
+    chmod -R 777 data_volume
     docker compose up
     ```
 
