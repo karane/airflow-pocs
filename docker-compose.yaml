@@ -22,6 +22,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./data_volume:/opt/airflow/data
+      - ./scripts:/opt/airflow/scripts
     ports:
       - "8080:8080"
     command: webserver
@@ -37,6 +38,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./data_volume:/opt/airflow/data
+      - ./scripts:/opt/airflow/scripts
     command: scheduler
 
 volumes:
