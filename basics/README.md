@@ -1,4 +1,4 @@
-# Airflow POC
+# Airflow POC - Basics
 
 This project sets up a basic Apache Airflow environment with Docker Compose.
 
